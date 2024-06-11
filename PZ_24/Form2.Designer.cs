@@ -1,6 +1,6 @@
 ﻿namespace PZ_24
 {
-    partial class Colors
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.Scroll_Red = new System.Windows.Forms.HScrollBar();
             this.Scroll_Green = new System.Windows.Forms.HScrollBar();
             this.Scroll_Blue = new System.Windows.Forms.HScrollBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picResultColor = new System.Windows.Forms.PictureBox();
             this.numeric_Red = new System.Windows.Forms.NumericUpDown();
             this.numeric_Green = new System.Windows.Forms.NumericUpDown();
             this.numeric_Blue = new System.Windows.Forms.NumericUpDown();
@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picResultColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Red)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Green)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Blue)).BeginInit();
@@ -55,6 +55,8 @@
             this.Scroll_Red.Name = "Scroll_Red";
             this.Scroll_Red.Size = new System.Drawing.Size(181, 29);
             this.Scroll_Red.TabIndex = 0;
+            this.Scroll_Red.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Scroll_Red_Scroll);
+            this.Scroll_Red.ValueChanged += new System.EventHandler(this.Scroll_Red_ValueChanged);
             // 
             // Scroll_Green
             // 
@@ -64,6 +66,7 @@
             this.Scroll_Green.Name = "Scroll_Green";
             this.Scroll_Green.Size = new System.Drawing.Size(181, 29);
             this.Scroll_Green.TabIndex = 1;
+            this.Scroll_Green.ValueChanged += new System.EventHandler(this.Scroll_Green_ValueChanged);
             // 
             // Scroll_Blue
             // 
@@ -73,15 +76,16 @@
             this.Scroll_Blue.Name = "Scroll_Blue";
             this.Scroll_Blue.Size = new System.Drawing.Size(181, 29);
             this.Scroll_Blue.TabIndex = 2;
+            this.Scroll_Blue.ValueChanged += new System.EventHandler(this.Scroll_Blue_ValueChanged);
             // 
-            // pictureBox1
+            // picResultColor
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(482, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 98);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.picResultColor.BackColor = System.Drawing.Color.Black;
+            this.picResultColor.Location = new System.Drawing.Point(482, 45);
+            this.picResultColor.Name = "picResultColor";
+            this.picResultColor.Size = new System.Drawing.Size(112, 98);
+            this.picResultColor.TabIndex = 3;
+            this.picResultColor.TabStop = false;
             // 
             // numeric_Red
             // 
@@ -94,6 +98,7 @@
             this.numeric_Red.Name = "numeric_Red";
             this.numeric_Red.Size = new System.Drawing.Size(120, 22);
             this.numeric_Red.TabIndex = 4;
+            this.numeric_Red.ValueChanged += new System.EventHandler(this.numeric_Red_ValueChanged);
             // 
             // numeric_Green
             // 
@@ -106,6 +111,7 @@
             this.numeric_Green.Name = "numeric_Green";
             this.numeric_Green.Size = new System.Drawing.Size(120, 22);
             this.numeric_Green.TabIndex = 5;
+            this.numeric_Green.ValueChanged += new System.EventHandler(this.numeric_Green_ValueChanged);
             // 
             // numeric_Blue
             // 
@@ -118,6 +124,7 @@
             this.numeric_Blue.Name = "numeric_Blue";
             this.numeric_Blue.Size = new System.Drawing.Size(120, 22);
             this.numeric_Blue.TabIndex = 6;
+            this.numeric_Blue.ValueChanged += new System.EventHandler(this.numeric_Blue_ValueChanged);
             // 
             // button1
             // 
@@ -127,6 +134,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Ok";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -145,6 +153,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Other Colors";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -173,7 +182,7 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Blue";
             // 
-            // Colors
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,14 +196,14 @@
             this.Controls.Add(this.numeric_Blue);
             this.Controls.Add(this.numeric_Green);
             this.Controls.Add(this.numeric_Red);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picResultColor);
             this.Controls.Add(this.Scroll_Blue);
             this.Controls.Add(this.Scroll_Green);
             this.Controls.Add(this.Scroll_Red);
-            this.Name = "Colors";
+            this.Name = "Form2";
             this.Text = "Colors";
             this.Load += new System.EventHandler(this.Colors_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picResultColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Red)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Green)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Blue)).EndInit();
@@ -208,7 +217,7 @@
         private System.Windows.Forms.HScrollBar Scroll_Red;
         private System.Windows.Forms.HScrollBar Scroll_Green;
         private System.Windows.Forms.HScrollBar Scroll_Blue;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picResultColor;
         private System.Windows.Forms.NumericUpDown numeric_Red;
         private System.Windows.Forms.NumericUpDown numeric_Green;
         private System.Windows.Forms.NumericUpDown numeric_Blue;

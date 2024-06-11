@@ -18,7 +18,7 @@ namespace PZ_24
         int historyCounter; //Счетчик истории 
         GraphicsPath currentPath;
         Point oldLocation;
-        public Pen currentPen;
+        static public Pen currentPen;
         Color historyColor; //Сохранение текущего цвета перед использованием ластика 
         List<Image> History; //Список для истории 
 
@@ -45,7 +45,7 @@ namespace PZ_24
             SaveDlg.ShowDialog();
             
 
-            if (SaveDlg.FileName != "") //Если введено не пустое имя 
+            if (SaveDlg.FileName != "") 
             {
                 System.IO.FileStream fs =
                 (System.IO.FileStream)SaveDlg.OpenFile();
@@ -66,19 +66,6 @@ namespace PZ_24
                 }
                 fs.Close();
             }
-
-            /*if (picDrawingSurface.Image != null)
-            {
-                var result = MessageBox.Show("Сохранить текущее изображение перед созданием нового рисунка?", "Предупреждение", MessageBoxButtons.YesNoCancel);
-
-                switch (result)
-                {
-                    case DialogResult.No: break;
-                    case DialogResult.Yes: saveF2ToolStripMenuItem_Click (sender, e); break;
-                    case DialogResult.Cancel: return;
-                }
-            }*/
-
         }
 
         private void solidToolStripMenuItem_Click(object sender, EventArgs e)
@@ -268,6 +255,83 @@ namespace PZ_24
                 picDrawingSurface.Image = new Bitmap(History[++historyCounter]);
             }
             else MessageBox.Show("История пуста");
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            Color c = Color.Black;
+            Form2 af = new Form2(c);
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Bitmap pic = new Bitmap(686, 469);
+            picDrawingSurface.Image = pic;
+            Graphics g = Graphics.FromImage(picDrawingSurface.Image);
+            g.Clear(Color.White);
+            g.DrawImage(picDrawingSurface.Image, 0, 0, 686, 469);
+        }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Color c = Color.Black;
+            Form2 af = new Form2(c);
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog SaveDlg = new SaveFileDialog();
+            SaveDlg.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
+            SaveDlg.Title = "Save an Image File";
+            SaveDlg.FilterIndex = 4;
+            SaveDlg.ShowDialog();
+
+
+            if (SaveDlg.FileName != "")
+            {
+                System.IO.FileStream fs =
+                (System.IO.FileStream)SaveDlg.OpenFile();
+                switch (SaveDlg.FilterIndex)
+                {
+                    case 1:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Jpeg);
+                        break;
+                    case 2:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Bmp);
+                        break;
+                    case 3:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Gif);
+                        break;
+                    case 4:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Png);
+                        break;
+                }
+                fs.Close();
+            }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OP = new OpenFileDialog();
+            OP.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
+            OP.Title = "Open an Image File";
+            OP.FilterIndex = 1;
+            if (OP.ShowDialog() != DialogResult.Cancel)
+                picDrawingSurface.Load(OP.FileName);
+            picDrawingSurface.AutoSize = true;
+        }
+
+        private void exitAltXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap pic = new Bitmap(686, 469);
+            picDrawingSurface.Image = pic;
+            Graphics g = Graphics.FromImage(picDrawingSurface.Image);
+            g.Clear(Color.White);
+            g.DrawImage(picDrawingSurface.Image, 0, 0, 686, 469);
         }
     }
 }

@@ -96,7 +96,7 @@
             this.newCtrlNToolStripMenuItem.Image = global::PZ_24.Properties.Resources.icons8_добавить_файл_94;
             this.newCtrlNToolStripMenuItem.Name = "newCtrlNToolStripMenuItem";
             this.newCtrlNToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newCtrlNToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.newCtrlNToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.newCtrlNToolStripMenuItem.Text = "New";
             this.newCtrlNToolStripMenuItem.Click += new System.EventHandler(this.newCtrlNToolStripMenuItem_Click);
             // 
@@ -105,7 +105,7 @@
             this.openF3ToolStripMenuItem.Image = global::PZ_24.Properties.Resources.icons8_открыть_папку_94;
             this.openF3ToolStripMenuItem.Name = "openF3ToolStripMenuItem";
             this.openF3ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.openF3ToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.openF3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openF3ToolStripMenuItem.Text = "Open";
             this.openF3ToolStripMenuItem.Click += new System.EventHandler(this.openF3ToolStripMenuItem_Click);
             // 
@@ -114,22 +114,23 @@
             this.saveF2ToolStripMenuItem.Image = global::PZ_24.Properties.Resources.icons8_сохранить_как_941;
             this.saveF2ToolStripMenuItem.Name = "saveF2ToolStripMenuItem";
             this.saveF2ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.saveF2ToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.saveF2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveF2ToolStripMenuItem.Text = "Save";
             this.saveF2ToolStripMenuItem.Click += new System.EventHandler(this.saveF2ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(182, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // exitAltXToolStripMenuItem
             // 
             this.exitAltXToolStripMenuItem.Image = global::PZ_24.Properties.Resources.icons8_удалить_94;
             this.exitAltXToolStripMenuItem.Name = "exitAltXToolStripMenuItem";
             this.exitAltXToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
-            this.exitAltXToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.exitAltXToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitAltXToolStripMenuItem.Text = "Exit";
+            this.exitAltXToolStripMenuItem.Click += new System.EventHandler(this.exitAltXToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -210,6 +211,7 @@
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
             this.colorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.colorToolStripMenuItem.Text = "Color";
+            this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -224,7 +226,7 @@
             this.aboutToolStripMenuItem.Image = global::PZ_24.Properties.Resources.icons8_информация_94;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -295,6 +297,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(77, 79);
             this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click_1);
             // 
             // toolStripButton3
             // 
@@ -305,6 +308,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(77, 79);
             this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton4
             // 
@@ -315,6 +319,7 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(77, 79);
             this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripSeparator3
             // 
@@ -330,6 +335,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(77, 79);
             this.toolStripButton5.Text = "toolStripButton5";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // picDrawingSurface
             // 

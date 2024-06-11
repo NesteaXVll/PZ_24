@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace PZ_24
 {
-    public partial class Colors : Form
+    public partial class Form2 : Form
     {
-        
-        public Colors()
+        static Color colorResult;
+
+        public Form2(Color color)
         {
             InitializeComponent();
             Scroll_Red.Tag = numeric_Red;
@@ -30,6 +31,84 @@ namespace PZ_24
         private void Colors_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Scroll_Red_ValueChanged(object sender, EventArgs e)
+        {
+            ScrollBar scrollBar = (ScrollBar)sender;
+            NumericUpDown numericUpDown = (NumericUpDown)scrollBar.Tag;
+            numericUpDown.Value = scrollBar.Value;
+            UpdateColor();
+        }
+
+        private void numeric_Red_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown numericUpDown = (NumericUpDown)sender;
+            ScrollBar scrollBar = (ScrollBar)numericUpDown.Tag;
+            scrollBar.Value = (int)numericUpDown.Value;
+            UpdateColor();
+        }
+
+        private void Scroll_Green_ValueChanged(object sender, EventArgs e)
+        {
+            ScrollBar scrollBar = (ScrollBar)sender;
+            NumericUpDown numericUpDown = (NumericUpDown)scrollBar.Tag;
+            numericUpDown.Value = scrollBar.Value;
+            UpdateColor();
+        }
+
+        private void numeric_Green_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown numericUpDown = (NumericUpDown)sender;
+            ScrollBar scrollBar = (ScrollBar)numericUpDown.Tag;
+            scrollBar.Value = (int)numericUpDown.Value;
+            UpdateColor();
+        }
+
+        private void Scroll_Blue_ValueChanged(object sender, EventArgs e)
+        {
+            ScrollBar scrollBar = (ScrollBar)sender;
+            NumericUpDown numericUpDown = (NumericUpDown)scrollBar.Tag;
+            numericUpDown.Value = scrollBar.Value;
+            UpdateColor();
+        }
+
+        private void numeric_Blue_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown numericUpDown = (NumericUpDown)sender;
+            ScrollBar scrollBar = (ScrollBar)numericUpDown.Tag;
+            scrollBar.Value = (int)numericUpDown.Value;
+            UpdateColor();
+        }
+        private void UpdateColor()
+        {
+            colorResult = Color.FromArgb(Scroll_Red.Value, Scroll_Green.Value, Scroll_Blue.Value);
+            picResultColor.BackColor = colorResult;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                Scroll_Red.Value = colorDialog.Color.R;
+                Scroll_Green.Value = colorDialog.Color.G;
+                Scroll_Blue.Value = colorDialog.Color.B;
+                colorResult = colorDialog.Color;
+                UpdateColor();
+            }
+
+        }
+
+        private void Scroll_Red_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1.currentPen.Color = colorResult;
+            Close();
         }
     }
 }
